@@ -8,7 +8,7 @@ from pytgcalls.types.input_stream import InputAudioStream, InputStream
 from pyrogram.types import Message, InlineKeyboardMarkup
 
 from KazuMusic import BOT_NAME, BOT_USERNAME, SUDO_USERS, db_mem
-from KazuMusic.Helpers.PyTgCalls import Queues, Fallen
+from KazuMusic.Helpers.PyTgCalls import Queues, Kazu
 from KazuMusic.Helpers.Database import (add_active_chat, is_active_chat, music_off,
                             music_on)
 from KazuMusic.Helpers.Inline import audio_markup, primary_markup
