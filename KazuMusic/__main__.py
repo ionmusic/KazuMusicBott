@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from youtubesearchpython import VideosSearch
 
 from KazuMusic.Helpers.Logging import *
-from KazuMusic.Helpers.PyTgCalls.Fallen import run
+from KazuMusic.Helpers.PyTgCalls.Kazu import run
 from KazuMusic.Modules import ALL_MODULES
 from KazuMusic.Helpers.Inline import private_panel
 from KazuMusic.Helpers.Database import get_active_chats, remove_active_chat, add_served_user
