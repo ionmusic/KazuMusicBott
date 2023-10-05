@@ -34,3 +34,22 @@ async def remove_served_chat(chat_id: int):
     if not is_served:
         return
     return await chatsdb.delete_one({"chat_id": chat_id})
+
+
+# Active Video Chats
+async def get_active_video_chats() -> list:
+    return activevideo
+
+
+async def is_active_video_chat(chat_id: int) -> bool:
+    return chat_id in activevideo
+
+
+async def add_active_video_chat(chat_id: int):
+    if chat_id not in activevideo:
+        activevideo.append(chat_id)
+
+
+async def remove_active_video_chat(chat_id: int):
+    if chat_id in activevideo:
+        activevideo.remove(chat_id)
