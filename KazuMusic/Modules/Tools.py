@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from KazuMusic import app, Ass, BOT_NAME, SUDO_USERS
-from KazuMusic.Helpers.Database import get_active_chats
+from KazuMusic.Helpers.Database import get_active_chats, get_active_chats
 
 
 __MODULE__ = "Tᴏᴏʟs"
