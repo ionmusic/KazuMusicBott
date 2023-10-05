@@ -1,30 +1,34 @@
-import os
-
-from yt_dlp import YoutubeDL
-
-ydl_opts = {
-    "format": "bestaudio/best",
-    "outtmpl": "downloads/%(id)s.%(ext)s",
-    "geo_bypass": True,
-    "nocheckcertificate": True,
-    "quiet": True,
-    "no_warnings": True,
-    "prefer_ffmpeg": True,
-    "postprocessors": [
-        {
-            "key": "FFmpegExtractAudio",
-            "preferredcodec": "mp3",
-            "preferredquality": "320",
-        }
-    ],
-}
-ydl = YoutubeDL(ydl_opts)
+import asyncio
+from os import path
 
 
-def audio_dl(url: str) -> str:
-    sin = ydl.extract_info(url, False)
-    x_file = os.path.join("downloads", f"{sin['id']}.mp3")
-    if os.path.exists(x_file):
-        return x_file
-    ydl.download([url])
-    return x_file
+class FFmpegReturnCodeError(Exception):
+    pass
+
+
+async def convert(file_path: str) -> str:
+    out = path.basename(file_path)
+    out = out.split(".")
+    out[-1] = "raw"
+    out = ".".join(out)
+    out = path.basename(out)
+    out = path.join("raw_files", out)
+
+    if path.isfile(out):
+        return out
+
+    try:
+        proc = await asyncio.create_subprocess_shell(
+            f"ffmpeg -y -i {file_path} -f s16le -ac 1 -ar 48000 -acodec pcm_s16le {out}",
+            asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+
+        await proc.communicate()
+
+        if proc.returncode != 0:
+            raise FFmpegReturnCodeError("FFmpeg did not return 0")
+
+        return out
+    except:
+        raise FFmpegReturnCodeError("FFmpeg did not return 0")
