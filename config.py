@@ -11,6 +11,7 @@ API_HASH = getenv("API_HASH", "dd3d9c1d6f3db707a983344fab5a9335")
 
 ASS_HANDLER = list(getenv("ASS_HANDLER", ".").split())
 BOT_TOKEN = getenv("BOT_TOKEN", "6417202271:AAGGeOlIvOGzwG4Hi4Qoj5xGoQsmpcWehN4")
+BOT_ID = 6417202271
 
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "5000"))
 LOGGER_ID = int(getenv("LOGGER_ID", "-1001837838911"))
