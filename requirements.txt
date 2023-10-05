@@ -11,7 +11,7 @@ pillow
 psutil
 python-dotenv
 py-tgcalls==0.9.7
-pyrogram==2.0.41
+git+https://github.com/naya1503/pyrogram
 requests
 rich
 speedtest-cli
