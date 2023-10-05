@@ -22,7 +22,7 @@ async def startup_edit(_message_id, _message_):
         )
         return fallenwtf
     except:
-        fallenwtf = await startup_send_new(_message_)
+        fallenwtf = await startup_msg(_message_)
         return fallenwtf
 
 
