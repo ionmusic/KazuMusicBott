@@ -89,11 +89,6 @@ async def fallen_boot():
         )
         console.print(f"\n[red]Stopping Bot")
         return
-    a = await app.get_chat_member(config.LOGGER_ID, BOT_ID)
-    if a.status != "administrator":
-        print("Promote Bot as Admin in Logger Channel")
-        console.print(f"\n[red]Stopping Bot")
-        return
     try:
         await Ass.send_message(
             config.LOGGER_ID,
