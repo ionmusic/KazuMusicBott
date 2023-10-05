@@ -31,7 +31,7 @@ __HELP__ = """
 """
 
 
-@app.on_message(filters.command(["stats", "gstats"]) & ~filters.edited)
+@app.on_message(filters.command(["stats", "gstats"]))
 async def gstats(_, message):
     try:
         await message.delete()
