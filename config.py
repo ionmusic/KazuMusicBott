@@ -6,8 +6,8 @@ load_dotenv()
 get_queue = {}
 
 
-API_ID = int(getenv("API_ID", "8479389"))
-API_HASH = getenv("API_HASH", "f75e6f068c8bb9b8c884484ea2c6177b")
+API_ID = int(getenv("API_ID", "26987250"))
+API_HASH = getenv("API_HASH", "dd3d9c1d6f3db707a983344fab5a9335")
 
 ASS_HANDLER = list(getenv("ASS_HANDLER", ".").split())
 BOT_TOKEN = getenv("BOT_TOKEN", "6417202271:AAGGeOlIvOGzwG4Hi4Qoj5xGoQsmpcWehN4")
