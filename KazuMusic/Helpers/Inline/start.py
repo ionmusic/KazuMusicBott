@@ -2,7 +2,7 @@ import config
 
 from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaPhoto, Message)
-from FallenMusic import BOT_USERNAME, F_OWNER
+from KazuMusic import BOT_USERNAME, F_OWNER
 
 
 def start_pannel():
