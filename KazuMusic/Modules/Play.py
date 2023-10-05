@@ -27,7 +27,6 @@ loop = asyncio.get_event_loop()
     filters.command(["play", f"play@{BOT_USERNAME}"]) & filters.group
 )
 @checker
-@PermissionCheck
 @AssistantAdd
 async def play(_, message: Message):
     try:
