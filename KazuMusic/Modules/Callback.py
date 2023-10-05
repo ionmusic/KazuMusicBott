@@ -13,7 +13,7 @@ from KazuMusic.Cache.checker import checkerCB
 from KazuMusic.Cache.admins import AdminRightsCheck, AdminRightsCheckCB
 from KazuMusic.Helpers.Thumbnails import thumb_init
 from KazuMusic.Helpers.Ytinfo import get_yt_info_id
-from KazuMusic.Helpers.PyTgCalls import Queues, Fallen
+from KazuMusic.Helpers.PyTgCalls import Queues, Kazu
 from KazuMusic.Helpers.Changers import time_to_seconds
 from KazuMusic.Helpers.PyTgCalls.Converter import convert
 from KazuMusic.Helpers.PyTgCalls.Downloader import download
